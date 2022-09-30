@@ -42,6 +42,10 @@ public class FileHada {
             if (fileName.contains(".HADA")) {
                 this.fileName = fileName.replaceAll(".HADA", "");
             }
+            if (fileName.contains(".txt")) {
+                System.out.println("[ERROR]. No se aceptan archivos de texto");
+                return false;
+            }
             if (fileName.contains(" ")) {
                 System.out.println("El nombre del archivo no puede contener espacios en blanco");
                 return false;
