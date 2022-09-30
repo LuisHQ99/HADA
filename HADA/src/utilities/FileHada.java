@@ -63,7 +63,7 @@ public class FileHada {
                 return false;
             }
 
-            Pattern special = Pattern.compile("[`!@#$%&*()+=|<>?{}\\[\\]~-]");
+            Pattern special = Pattern.compile("[`,¡¨´.:;¿!@#$%&*()+=|<>?{}\\[\\]~-]");
             Matcher hasSpecial = special.matcher(this.fileName);
             if (hasSpecial.find()) {
                 System.out.println("El nombre del archivo no puede tener caracteres especiales");
