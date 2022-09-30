@@ -47,35 +47,35 @@ public class FileHada {
                 return false;
             }
             if (fileName.contains(" ")) {
-                System.out.println("El nombre del archivo no puede contener espacios en blanco");
+                System.out.println("[ERROR]. El nombre del archivo no puede contener espacios en blanco");
                 return false;
             }
             if (this.fileName.length() > 20) {
-                System.out.println("El nombre del archivo no puede ser mayor a 20 caracteres");
+                System.out.println("[ERROR]. El nombre del archivo no puede ser mayor a 20 caracteres");
                 return false;
             }
             if (this.fileName.charAt(0) == '_') {
-                System.out.println("El nombre del archivo no puede empezar con guion bajo");
+                System.out.println("[ERROR]. El nombre del archivo no puede empezar con guion bajo");
                 return false;
             }
             if (!Pattern.compile("^[A-Za-z]").matcher(this.fileName).find()) {
-                System.out.println("El nombre del archivo debe empezar con una letra");
+                System.out.println("[ERROR]. El nombre del archivo debe empezar con una letra");
                 return false;
             }
             if (this.fileName.charAt(this.fileName.length() - 1) == '_') {
-                System.out.println("El nombre del archivo no puede terminar con guion bajo");
+                System.out.println("[ERROR]. El nombre del archivo no puede terminar con guion bajo");
                 return false;
             }
 
             Pattern special = Pattern.compile("[`!@#$%&*()+=|<>?{}\\[\\]~-]");
             Matcher hasSpecial = special.matcher(this.fileName);
             if (hasSpecial.find()) {
-                System.out.println("El nombre del archivo no puede tener caracteres especiales");
+                System.out.println("[ERROR]. El nombre del archivo no puede tener caracteres especiales");
                 return false;
             }
 
         } else {
-            System.out.println("Debe ingresar un archivo");
+            System.out.println("[ERROR]. Debe ingresar un archivo");
             return false;
         }
 
