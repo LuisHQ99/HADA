@@ -5,16 +5,10 @@
  */
 package hada;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStream;
-import java.net.URL;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import utilities.FileHada;
 
 /**
@@ -32,6 +26,7 @@ public class HADA {
             
             FileHada fileHada = new FileHada();
             fileHada.readFile(args[0]);
+            //fileHada.readFile("Calcular_Inflacion1.HADA");
 
         } catch (FileNotFoundException ex) {
             Logger.getLogger(HADA.class.getName()).log(Level.SEVERE, null, ex);
