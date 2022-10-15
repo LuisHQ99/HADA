@@ -27,11 +27,16 @@ public class FileHada {
         if (validateNameFile(this.fileName)) {
 
             String path = "./" + this.fileName + ".HADA";
+            //String path = "C:\\Users\\50688\\Documents\\Angie\\Compiladores\\Calcular_Inflacion1.HADA";
             FileInputStream fis = new FileInputStream(path);
             BufferedReader in = new BufferedReader(new InputStreamReader(fis));
 
             System.out.println("path: " + path);
-            System.out.println("Primera linea: " + in.readLine());
+
+
+            CompileFile compileFile = new CompileFile();
+            compileFile.compileFile(in, fileName);
+            
         }
 
     }
@@ -67,7 +72,7 @@ public class FileHada {
                 return false;
             }
 
-            Pattern special = Pattern.compile("[`!@#$%&*()+=|<>?{}\\[\\]~-]");
+            Pattern special = Pattern.compile("[`,¡¨´.:;¿!@#$%&*()+=|<>?{}\\[\\]~-]");
             Matcher hasSpecial = special.matcher(this.fileName);
             if (hasSpecial.find()) {
                 System.out.println("[ERROR]. El nombre del archivo no puede tener caracteres especiales");
