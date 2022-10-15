@@ -27,12 +27,8 @@ public class FileHada {
         if (validateNameFile(this.fileName)) {
 
             String path = "./" + this.fileName + ".HADA";
-            //String path = "C:\\Users\\50688\\Documents\\Angie\\Compiladores\\Calcular_Inflacion1.HADA";
             FileInputStream fis = new FileInputStream(path);
             BufferedReader in = new BufferedReader(new InputStreamReader(fis));
-
-            System.out.println("path: " + path);
-
 
             CompileFile compileFile = new CompileFile();
             compileFile.compileFile(in, fileName);
